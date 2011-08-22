@@ -1,0 +1,59 @@
+
+https://github.com/                             -  Гитхаб
+http://help.github.com/win-set-up-git/          -  Хелп по гитхабу
+
+
+
+
+/*Забрать исходники на локальный репрозиторий*/
+
+Открываете гит баш там где будешь держать исходник
+
+git clone git clone git@github.com:SergiiSidorov/Tamontr.git 
+
+/*Checkout*/ 
+git pull
+
+/*Checkout если произошли изменения*/
+git stash
+git pull
+git stash apply
+
+/* Если stash apply вызвал какие либо ошибки мержа */
+git mergetool
+
+/* Коммит */
+git status   
+git add
+git commit -m "Comment"
+git push
+
+/* Merge */
+git mergetool
+
+/* Посмотреть изменения в КОДЕ с коммита */
+git diff
+
+/* Просмотреть ВСЕ изменения по файлу  */
+gitk SportChatter/src/com/frog/ui/ScoresView.java
+
+/* Статус изминений по файлам проекта */
+git status
+
+/* Просмотр истории коммитов */ 
+git log
+
+/* Отмена изменений на локальном репрозитории */
+git reset
+
+/* Удаление файла из коммита */
+git rm -f "path"
+
+/* Коммит с удалением */
+
+/* Коммит */
+git status   
+git add .
+git rm -f "path to file which would be deleted"
+git commit -m "Comment"
+git push

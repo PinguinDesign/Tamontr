@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TabHost;
 
 public class MainTab extends TabActivity {
@@ -14,12 +16,12 @@ public class MainTab extends TabActivity {
 	private static final String TASK_VIEW_TAG = "TASK_VIEW";
 	private static final String MONEY_EDIT_TAG = "MONEY_EDIT";
 	private static final int TABS_COUNT = 0;
-	private static final int TAB_SCREEN_HEIGHT = 50;
+	private static final int TAB_SCREEN_HEIGHT = 80;
+	private static final int TASK = 0;
+	private static final int MONEY = 0;
     
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-
-    	
         super.onCreate(savedInstanceState);
         
         Resources res = getResources();
@@ -45,15 +47,45 @@ public class MainTab extends TabActivity {
         //Init some tab design
         initTabWigetView();
         setInitialBgrTab();
-    }
+        //TODO After designers do background of tabs
+		//getTabHost().getTabWidget().getChildAt(TASK).setBackgroundResource(R.drawable.task_tab_active); 
+        //setupTabDesignLogic();
+	}
 	
 	
 	private void setInitialBgrTab() {
 		//TODO After designers do background of tabs
 		/*
-			getTabHost().getTabWidget().getChildAt(0).setBackgroundResource(R.drawable.task_tab); 
-        	getTabHost().getTabWidget().getChildAt(1).setBackgroundResource(R.drawable.money_tab);  
+			getTabHost().getTabWidget().getChildAt(TASK).setBackgroundResource(R.drawable.task_tab); 
+        	getTabHost().getTabWidget().getChildAt(MONEY).setBackgroundResource(R.drawable.money_tab);  
 		*/
+	}
+	
+	private void setupTabDesignLogic(){
+		
+		//TODO
+		getTabHost().getTabWidget().getChildAt(TASK).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {	
+				setInitialBgrTab();
+				//setSelectedTabBgr(TASK, R.drawable.all_active);        
+				getTabHost().setCurrentTab(TASK);         
+				 	 
+			}  
+		});
+        
+        getTabHost().getTabWidget().getChildAt(MONEY).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {	
+				setInitialBgrTab();
+			//	setSelectedTabBgr(MONEY, R.drawable.favs_active);
+				getTabHost().setCurrentTab(MONEY);  
+			}  
+		});
+	}
+	
+	private void setSelectedTabBgr(int position, int res) {
+		getTabHost().getTabWidget().getChildAt(position).setBackgroundResource(res); 
 	}
 	
 	private void initTabWigetView(){

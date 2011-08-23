@@ -1,0 +1,12 @@
+Tasks:
+
+https://market.android.com/details?id=com.rememberthemilk.MobileRTM&feature=search_result
+https://market.android.com/details?id=no.intellicom.tasklist&feature=related_apps
+
+
+Money:
+
+https://market.android.com/details?id=org.koshelek.android&feature=search_result
+https://market.android.com/details?id=com.thefrogsoft.mobileeconomist&feature=also_installed
+https://market.android.com/details?id=ru.surfstudio.drebedengi&feature=also_installed
+https://market.android.com/details?id=fourandroids.maorirus&feature=also_installed
